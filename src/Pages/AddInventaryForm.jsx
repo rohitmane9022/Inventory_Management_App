@@ -4,7 +4,7 @@ import { addInve, saveFormData } from '../ActionCreater/actions'
 import { Navigate } from 'react-router';
 
 
-export default function AddInventaryForm() {
+ export const AddInventaryForm=()=> {
   const [redirect,setredirect]= useState(false)
   const dispatch = useDispatch();
   const formData = useSelector((state) => state.formData);
