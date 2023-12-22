@@ -34,10 +34,14 @@ export default function AddSales() {
   return (
     <div>
       <form onSubmit={handleSales}>
-        <input type="text" value={name} onChange={e=> setname(e.target.value)} />
-        <input type="number" value={quantity} onChange={e=> setquantity(e.target.value)} />
-        <input type="text" value={Description} onChange={e=> setDescription(e.target.value)} />
-        <input type="number" value={price} onChange={e=> setprice(e.target.value)} />
+        <label>Name</label>
+        <input type="text"  placeholder="Name of Sales" value={name} onChange={e=> setname(e.target.value)}/>
+        <label>Quantity</label>
+        <input type="number"  placeholder="Quantity No" value={quantity} onChange={e=> setquantity(e.target.value)} />
+        <label>Description</label>
+        <input type="text"  placeholder="Description" value={Description} onChange={e=> setDescription(e.target.value)} />
+        <label>Price</label>
+        <input type="number"  placeholder="Price" value={price} onChange={e=> setprice(e.target.value)} />
         <button type='submit'>Submit</button>
       </form>
     </div>

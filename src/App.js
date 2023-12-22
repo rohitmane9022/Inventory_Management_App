@@ -11,14 +11,16 @@ import AddSales from './Pages/AddSales';
 import AllSales from './Pages/AllSales';
 import SalesManagment from './Pages/SalesManagment';
 import EditItems from './Pages/EditItems';
+import Report from './Pages/Report';
+import InventaryReport from './Pages/InventaryReport';
+import ReportSales from './Pages/ReportSales';
 
 
 function App() {
 
   return (
     <div className="App">
-      skjsnkj
-      lkncsjkc
+     
    <Routes>
     <Route path='/' element={<HomePages/>}/>
     <Route path='/inventary' element={<InventaryMagament/>}/>
@@ -29,6 +31,9 @@ function App() {
     <Route path='/sales' element={<SalesManagment/>}/>
     <Route path='/addsale' element={<AddSales/>}/>
     <Route path='/allsale' element={<AllSales/>}/>
+    <Route path='/reports' element={<Report/>}/>
+    <Route path='/reportinventary' element={<InventaryReport/>}/>
+    <Route path='/reportsales' element={<ReportSales/>}/>
    </Routes>
     </div>
   );

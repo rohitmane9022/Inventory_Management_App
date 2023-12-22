@@ -9,7 +9,7 @@ import { Navigate } from 'react-router';
   const dispatch = useDispatch();
   const formData = useSelector((state) => state.formData);
 
-  console.log(formData)
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     dispatch(addInve({ [name]: value })); 
@@ -27,10 +27,10 @@ import { Navigate } from 'react-router';
    return <Navigate to={"/allinventary"}/>
   }
 
-  console.log(redirect)
+ 
 
   return (
-    <div>
+    
       <form onSubmit={handlePostData}>
         <label>Name</label><input
           type="text"
@@ -58,6 +58,6 @@ import { Navigate } from 'react-router';
         />
         <button type="submit">Submit</button>
       </form>
-    </div>
+    
   );
 }

@@ -38,10 +38,10 @@ export default function Reducers(state=intialState,action) {
       case "DELETE-ITEM":
         return {...state,items:state.items.filter(item=> item._id !== action.payload)}  
         case "EDIT_INVENTORY_ITEM":
-            return {...state, itemsList: state.itemsList.map((item)=>(item._id===action.payload.id? {...item, 
-                name: action.payload.name,
-                quantity: action.payload.quantity,
-                price: action.payload.price } : item))} 
+          return {...state, itemsList: state.itemsList?.map((item)=>(item._id===action.payload.id? {...item, 
+            name: action.payload.name,
+            quantity: action.payload.quantity,
+            price: action.payload.price } : item))} 
       default:
         return state
   }

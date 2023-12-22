@@ -1,5 +1,5 @@
 import axios from "axios"
-import { response } from "express"
+
 
 
 export const getitems=()=>async(dispatch)=>{
@@ -86,18 +86,29 @@ export const DeleteItems=(itemId)=>async(dispatch)=>{
   catch(e){console.log(e)}
 }
 
-export const editItems = (itemId) =>({
+export const editItem = (data) => ({
   type: "EDIT_INVENTORY_ITEM",
-  payload: itemId
-})
-export const editItem=(data)=>async(dispatch)=>{
-try{
-  dispatch(editItem(data))
-  const response=await axios.post("https://inventarymanagment.rohitmane2.repl.co/items/"+data,{
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-}
-catch(e){console.log(e)}
-}
+  payload: data,
+});
+
+export const editItemToInventory = (itemToEdit, itemId) => async (dispatch) =>{
+   
+  dispatch(editItem(itemToEdit))
+  console.log(1112, itemToEdit)
+  try {
+      const response = await fetch(`https://inventarymanagment.rohitmane2.repl.co/item/${itemId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(itemToEdit),
+      });
+      if (response.ok) {
+        console.log("Item edited successfully to the server.");
+      } else {
+        console.error("Failed to edit item to the server.");
+      }
+    } catch (error) {
+      console.error("Error occurred while editing item:", error);
+    }
+} 
